@@ -73,7 +73,7 @@ namespace AnimeCartot
     }
     public class ListAnime
     {
-        public string fp = "AF.txt";
+        public string fp = "..\\..\\dataAI\\AF.txt";
         public BindingList<AnimeInfo> AnimeI;
         public ListAnime()
         {
@@ -95,7 +95,7 @@ namespace AnimeCartot
         }
         public void inFile()
         {
-            File.WriteAllText(@"AF.txt", string.Empty);
+            File.WriteAllText(@fp, string.Empty);
             FileStream file = new FileStream(fp, FileMode.OpenOrCreate);
             StreamWriter sw = new StreamWriter(file);
             for (int i = 0; i< AnimeI.Count; i++)
