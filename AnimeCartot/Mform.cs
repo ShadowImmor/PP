@@ -16,7 +16,7 @@ namespace AnimeCartot
         public Mform()
         {
             InitializeComponent();
-            this.dataGridView.CellMouseDoubleClick += DataGridViewCellMouseDoubleClickListener;
+            this.dataGridView.CellMouseDoubleClick += DataGridView_DoubleClick;
             DataAI = new ListAnime();
             this.DataAI.AnimeI = this.DataAI.getlist();
             dataGridView.DataSource = DataAI.AnimeI;
@@ -39,7 +39,7 @@ namespace AnimeCartot
             dataGridView.Columns[11].HeaderText = "Студия озвучки";
             dataGridView.Columns[12].HeaderText = "Студия";
         }
-        private void DataGridViewCellMouseDoubleClickListener(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridView_DoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int id = Convert.ToInt32(dataGridView.Rows[e.RowIndex].Cells[0].Value);
             new FormAddEdit(DataAI.AnimeI, id-1).Show();
